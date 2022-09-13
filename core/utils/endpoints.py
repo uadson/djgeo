@@ -15,7 +15,11 @@ def search(keyword=None, location=None):
 
     result = requests.get(config('YELP_SEARCH_ENDPOINT'), headers=headers, params=params)
 
+    print(result.json())
+    
     return result.json()
+
+
     
 
 def get_random_ip():

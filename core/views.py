@@ -11,7 +11,8 @@ def index(request):
 
     while not city:
         response = get_geo_data()
-        city = response['city']
+        if response:
+            city = response['city']
 
     qs = request.GET.get('key', None)
     location_in = request.GET.get('location_in', None)
